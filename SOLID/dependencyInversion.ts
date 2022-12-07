@@ -1,7 +1,8 @@
 export {};
 
 class User {}
-
+// 依存性逆転の原則（Dependency Inversion principle）
+//
 // 上位のクラス（UserController）と下位のクラス（UserService）が依存関係にある状態で
 // 依存性逆転の原則（Dependency Inversion principle）を遵守するには、
 // 1. 下位クラスの抽象クラスを作成
