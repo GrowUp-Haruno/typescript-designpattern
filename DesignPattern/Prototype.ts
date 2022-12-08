@@ -1,22 +1,18 @@
 // Prototype
 // 生成に関するデザインパターン
-// 原型となるインスタンスをコピーして新しいインスタンスを生成する
-// 親クラスでインスタンスをコピーするためのメソッドを定義
-// 子クラスで自分自身のコピーを返す実装
-// Manager: コピーするオブジェクトを管理しつつ、インスタンスを要求された際にコピーを返す
-// Prototype Interface(abstract): インスタンスをコピーして新しいインスタンスを作るためのメソッドを定義
-// Concrete Prototype Class: Prototype Interface(abstract)を実装(継承)
-// shallow copyだとフィールドがオブジェクトだった際に思わぬ副作用（例えばクローン先のプロパティを書き換えるとオリジナルも書き変わってしまうなど）
-// が発生するかもしれないので、基本的にDeep Copyを行う
-// Deep copyはlodashのcloneDeepが扱いやすい
-
 import _ from 'lodash';
 export {};
 
+// Prototype: クローン作成のメソッドを定義
+// 戻り値は自分自身を返す
 interface IItemPrototype {
   clone(): IItemPrototype;
 }
 
+// Concrete Prototype
+// Prototypeで定義したクローン作成メソッドを実装
+// 適宜フィールドやメソッドを実装
+// shallow copyだとフィールドがオブジェクトだった際に思わぬ副作用が発生するため、基本的にDeep Copyを用いる
 class ItemPrototype implements IItemPrototype {
   constructor(private _property: TProperty) {}
 
