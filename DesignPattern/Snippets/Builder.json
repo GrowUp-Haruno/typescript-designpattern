@@ -1,0 +1,35 @@
+{
+  "Builder Pattern": {
+    "prefix": "builder",
+    "description": "GoFのBuilderパターン",
+    "body": [
+      "class $1Product {",
+      "\t// プロダクトクラス",
+      "\t// trdl: 具象ビルダーから生成される結果のオブジェクト",
+      "\t// ToDo: 具象ビルダー内でインスタンス化して結果を受け取るため、ここではフィールドと型を定義してください",
+      "}",
+      "",
+      "interface $1Builder {",
+      "\t// ビルダーインターフェース",
+      "\t// trdl: プロダクトを構築する共通のステップを宣言",
+      "\t// ToDo: 構築ステップを宣言してください",
+      "\t// ToDo: 成果物を出力するステップを宣言してください",
+      "}",
+      "",
+      "class ${2:Concrete}Builder implements $1Builder {",
+      "\t// 具象ビルダークラス",
+      "\t// trdl: ビルダーインターフェースで宣言された各種ステップを実装",
+      "\t// trdl: クラスのバリエーションは増やすことが可能",
+      "",
+      "\tprivate ${1/^(.)(.*)$/${1:/downcase}${2}/}Product: $1Product;",
+      "}",
+      "",
+      "class $1Director {",
+      "\t// ディレクタークラス",
+      "\t// trdl: ビルダーの構築ステップを適宜並べた組み立て手順を管理",
+      "\t",
+      "  constructor(public ${1/^(.)(.*)$/${1:/downcase}${2}/}builder: $1Builder) {}",
+      "}"
+    ]
+  }
+}
