@@ -1,0 +1,38 @@
+{
+  "": {
+    "prefix": "abstract",
+    "description": "GoFのAbstract Factoryのパターン",
+    "body": [
+      "interface Abstract$1Product {",
+      "\t/**",
+      "\t * 抽象製品",
+      "\t * 製品の種類（家具で例えると、机・椅子・テーブルなど）",
+      "\t */",
+      "}",
+      "",
+      "class ConcreteProductA implements Abstract$1Product {",
+      "\t/**",
+      "\t * 具象製品",
+      "\t * AbstractProductを実装する",
+      "\t * 製品の種類毎を作成する",
+      "\t */",
+      "}",
+      "",
+      "interface Abstract$2Factory {",
+      "\t/**",
+      "\t * 抽象ファクトリー",
+      "\t * 製品の様式（家具で例える現代風、中世風など）",
+      "\t *",
+      "\t */",
+      "}",
+      "",
+      "class ConcreteFactoryA implements Abstract$2Factory {",
+      "\t/**",
+      "\t * 具象ファクトリー",
+      "\t * AbstractFactoryを実装する",
+      "\t * 製品の様式毎にクラスを作成する",
+      "\t */",
+      "}"
+    ]
+  }
+}
