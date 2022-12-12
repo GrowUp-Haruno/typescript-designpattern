@@ -1,5 +1,5 @@
 {
-  "": {
+  "abstract factory": {
     "prefix": "abstract",
     "description": "GoFのAbstract Factoryのパターン",
     "body": [
