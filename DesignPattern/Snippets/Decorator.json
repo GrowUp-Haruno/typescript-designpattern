@@ -1,0 +1,32 @@
+{
+  "Decorator pattern": {
+    "prefix": "decorator",
+    "description": "GoFのデコレーターパターン",
+    "body": [
+      "// 1. 拡張元のクラスから拡張対象のメソッド（今回はgetLogMessage()）を抽出して、",
+      "// Componentインターフェースを作成する。",
+      "interface Component {",
+      "\tmethod(): void;",
+      "}",
+      "",
+      "// 2. Componentインターフェースを実装したLoggerクラスに書き換える。",
+      "// class Base implements Component {",
+      "//\t method(): void;",
+      "// }",
+      "",
+      "abstract class Decorator implements Component {",
+      "\t// 3. Componentインターフェースを実装したDecorator抽象クラスを作成する。",
+      "\t//コンストラクタはComponent型を持つインスタンスを受け取れるようにする。",
+      "\tprotected component: Component;",
+      "\tconstructor(component: Component) {",
+      "\t\tthis.component = component;",
+      "\t}",
+      "\tabstract method(): void;",
+      "}",
+      "",
+      "class ConcreteDecorator extends Decorator {",
+      "\tmethod() {}",
+      "}"
+    ]
+  }
+}
